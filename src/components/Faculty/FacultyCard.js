@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, GraduationCap, Briefcase, Award, Linkedin, Twitter, Github, ExternalLink } from 'lucide-react';
+import { Star, GraduationCap, Briefcase, Linkedin, Twitter, Github, ExternalLink } from 'lucide-react';
 
 const FacultyCard = ({ faculty }) => {
   return (

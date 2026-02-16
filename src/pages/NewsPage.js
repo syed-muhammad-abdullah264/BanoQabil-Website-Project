@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Calendar, Filter, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Search, Filter, TrendingUp } from 'lucide-react';
 import NewsCard from '../components/News/NewsCard';
 import { newsArticles } from '../utils/data';
 

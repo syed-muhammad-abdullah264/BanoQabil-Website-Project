@@ -6,7 +6,6 @@ import {
   Users,
   Star,
   CheckCircle,
-  BookOpen,
 } from "lucide-react";
 
 const CoursesPage = () => {

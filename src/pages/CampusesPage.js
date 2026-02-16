@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { MapPin, Phone, Mail, Clock, CheckCircle, Navigation, Search } from 'lucide-react';
-import CampusCard from '../components/Campuses/CampusCard';
 import { campuses } from '../utils/data';
 
 const CampusesPage = () => {
