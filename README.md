@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# BanoQabil Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the BanoQabil marketing website built with React and Tailwind CSS. It showcases courses, campuses, faculty, news, and an admission workflow.
 
-## Available Scripts
+**Features**
+- Responsive, accessible landing pages built with React and Tailwind CSS
+- Hero, Services, Testimonials, Statistics, and CTA sections on the Home page
+- Courses listing and course preview components
+- Campuses listing with search and Google Maps directions
+- Faculty directory with filters and profile cards
+- News listing and detailed news pages (markdown support)
+- Contact and Registration pages with form handling
+- Authentication context and role-based utilities (Firebase)
+- Netlify functions for lightweight serverless features (in `netlify/functions`)
+- Dark mode support and theme context
+- Optimized production build (Create React App)
 
-In the project directory, you can run:
+**Local Setup**
+1. Install dependencies:
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Start development server:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm start
+```
 
-### `npm test`
+3. Build for production:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm run build
+```
 
-### `npm run build`
+If you need to reproduce Netlify CI behavior locally (ensures ESLint warnings fail builds):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+set CI=true&& npm run build   # Windows CMD
+$env:CI="true"; npm run build  # PowerShell
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Environment & Deployment**
+- Put any secret keys in a `.env` file (do not commit it). Example variables:
+	- `REACT_APP_FIREBASE_API_KEY`
+	- `REACT_APP_FIREBASE_AUTH_DOMAIN`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Netlify deploy:
+	- Build command: `npm run build`
+	- Publish directory: `build`
+	- If Netlify fails on lint warnings, you can set the environment variable `DISABLE_ESLINT_PLUGIN=true` in Site settings to bypass CRA lint plugin (not recommended long-term).
 
-### `npm run eject`
+**Tech Stack**
+- React 18 + Create React App
+- Tailwind CSS
+- Firebase (auth + firestore)
+- Netlify (hosting + functions)
+- MUI icons, lucide-react, framer-motion
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Scripts**
+- `npm start` – start dev server
+- `npm run build` – production build
+- `npm test` – run tests
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Contributing**
+- Create a branch for changes, commit, and open a PR.
+- Keep secrets out of the repo; use `.env` and Netlify environment variables.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you want, I can also add a short Features section inside the homepage or create a `FEATURES.md` file — which would you prefer? 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
