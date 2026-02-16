@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -9,21 +9,19 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import DownloadIcon from "@mui/icons-material/Download";
 
 const AdmissionRoadmap = () => {
-  const [activeStep, setActiveStep] = useState(0);
-
   const roadmapSteps = [
     {
       id: 1,
-      title: 'Explore Courses',
+      title: "Explore Courses",
       description: '"Explore IT courses tailored to your career goals.',
       duration: "1-2 Days",
-      status: 'completed',
+      status: "completed",
       details: [
-        'Visit courses page',
-        'Review course curriculum',
-        'Check prerequisites',
-        'Watch course preview'
-      ]
+        "Visit courses page",
+        "Review course curriculum",
+        "Check prerequisites",
+        "Watch course preview",
+      ],
     },
     {
       id: 2,
@@ -172,7 +170,6 @@ const AdmissionRoadmap = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="relative"
-                    onMouseEnter={() => setActiveStep(index)}
                   >
                     <div className="flex items-start space-x-6">
                       {/* Step Number */}
@@ -221,10 +218,7 @@ const AdmissionRoadmap = () => {
                         {/* Step Details */}
                         <div className="space-y-2">
                           {step.details.map((detail, idx) => (
-                            <div
-                              key={idx}
-                              className="flex items-start text-sm"
-                            >
+                            <div key={idx} className="flex items-start text-sm">
                               <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
                               <span className="text-gray-600 dark:text-gray-400">
                                 {detail}

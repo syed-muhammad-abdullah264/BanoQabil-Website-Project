@@ -1,5 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Users, GraduationCap, Briefcase, Award } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Users, GraduationCap, Briefcase, Award } from "lucide-react";
+
+const TARGET_STATS = {
+  students: 5000,
+  courses: 25,
+  placed: 3500,
+  awards: 20,
+};
 
 const Statistics = () => {
   const [stats, setStats] = useState({
@@ -9,20 +16,13 @@ const Statistics = () => {
     awards: 0,
   });
 
-  const targetStats = {
-    students: 5000,
-    courses: 25,
-    placed: 3500,
-    awards: 20,
-  };
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setStats(prev => ({
-        students: Math.min(prev.students + 50, targetStats.students),
-        courses: Math.min(prev.courses + 1, targetStats.courses),
-        placed: Math.min(prev.placed + 35, targetStats.placed),
-        awards: Math.min(prev.awards + 1, targetStats.awards),
+      setStats((prev) => ({
+        students: Math.min(prev.students + 50, TARGET_STATS.students),
+        courses: Math.min(prev.courses + 1, TARGET_STATS.courses),
+        placed: Math.min(prev.placed + 35, TARGET_STATS.placed),
+        awards: Math.min(prev.awards + 1, TARGET_STATS.awards),
       }));
     }, 30);
 
@@ -33,30 +33,30 @@ const Statistics = () => {
     {
       icon: <Users className="w-8 h-8" />,
       value: stats.students.toLocaleString(),
-      label: 'Students Trained',
-      suffix: '+',
-      color: 'blue',
+      label: "Students Trained",
+      suffix: "+",
+      color: "blue",
     },
     {
       icon: <GraduationCap className="w-8 h-8" />,
       value: stats.courses,
-      label: 'Courses',
-      suffix: '+',
-      color: 'purple',
+      label: "Courses",
+      suffix: "+",
+      color: "purple",
     },
     {
       icon: <Briefcase className="w-8 h-8" />,
       value: stats.placed.toLocaleString(),
-      label: 'Students Placed',
-      suffix: '+',
-      color: 'green',
+      label: "Students Placed",
+      suffix: "+",
+      color: "green",
     },
     {
       icon: <Award className="w-8 h-8" />,
       value: stats.awards,
-      label: 'Awards Won',
-      suffix: '+',
-      color: 'orange',
+      label: "Awards Won",
+      suffix: "+",
+      color: "orange",
     },
   ];
 
@@ -64,12 +64,15 @@ const Statistics = () => {
     <section className="section-padding gradient-bg text-white">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Impact in Numbers</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Our Impact in Numbers
+          </h2>
           <p className="opacity-90 max-w-2xl mx-auto">
-            Transforming lives through quality IT education and career development
+            Transforming lives through quality IT education and career
+            development
           </p>
         </div>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {statItems.map((stat, index) => (
             <div

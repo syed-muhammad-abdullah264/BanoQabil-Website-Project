@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { MapPin, Phone, Mail, Clock, CheckCircle, Navigation, Search } from 'lucide-react';
-import { campuses } from '../utils/data';
+import { MapPin, Phone, Mail, Navigation, Search } from "lucide-react";
+import { campuses } from "../utils/data";
 
 const CampusesPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Campuses data matching the image design
- 
 
-  const filteredCampuses = campuses.filter(campus =>
-    campus.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    campus.address.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredCampuses = campuses.filter(
+    (campus) =>
+      campus.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      campus.address.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   return (
@@ -21,12 +21,15 @@ const CampusesPage = () => {
       <section className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-12 md:py-16">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">Our Campuses</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">
+              Our Campuses
+            </h1>
             <p className="text-lg md:text-xl opacity-90 mb-8">
               Bringing Education Closer to You
             </p>
             <p className="text-base md:text-lg opacity-80 max-w-3xl mx-auto">
-              Find a Bano Qabil campus near you. We're here to serve you better across Karachi with multiple accessible locations.
+              Find a Bano Qabil campus near you. We're here to serve you better
+              across Karachi with multiple accessible locations.
             </p>
           </div>
         </div>
@@ -110,7 +113,9 @@ const CampusesPage = () => {
                   {/* Courses & Facilities */}
                   <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
                     <div>
-                      <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Facilities</h4>
+                      <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                        Facilities
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {campus.facilities.map((facility, idx) => (
                           <span
@@ -148,10 +153,13 @@ const CampusesPage = () => {
       <section className="section-padding bg-gradient-to-r from-blue-600 to-purple-700 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Can't Find Your Area?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              Can't Find Your Area?
+            </h2>
             <p className="text-lg opacity-90 mb-8">
-              We're expanding! New campuses are opening soon in more locations across Pakistan.
-              Contact us to suggest a location or inquire about upcoming campuses.
+              We're expanding! New campuses are opening soon in more locations
+              across Pakistan. Contact us to suggest a location or inquire about
+              upcoming campuses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -162,7 +170,7 @@ const CampusesPage = () => {
                 Call for Information
               </a>
               <Link
-              to="/contact"
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border-2 border-white hover:bg-white/10 rounded-lg font-medium transition-colors"
               >
                 <Mail className="w-5 h-5" />
