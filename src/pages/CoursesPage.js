@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Search, Filter, Clock, Users, Star, CheckCircle } from "lucide-react";
-import {
-  doc,
-  setDoc,
-  collection,
-  getDocs,
-  addDoc,
-  serverTimestamp,
-} from "firebase/firestore";
-import { auth, db } from "../firebase/config";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 const CoursesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
